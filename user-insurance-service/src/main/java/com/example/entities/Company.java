@@ -7,17 +7,19 @@ import javax.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class Company {
 
     @Id
     @GeneratedValue
-    private Long id;
-    private String name;
-    private String address;
-    private String contactNumber;
+    private Long companyId;
+    private String companyName;
+    private String gstIn;
 }

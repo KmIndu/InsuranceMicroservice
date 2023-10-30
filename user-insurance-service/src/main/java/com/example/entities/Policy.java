@@ -7,17 +7,21 @@ import javax.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+
 public class Policy {
 
     @Id
     @GeneratedValue
-    private Long id;
-    private String name;
+    private int policyId;
+    private String policyName;
     private String description;
-    private double premium;
+    private double coverageAmount;
+    private int premium;
 }

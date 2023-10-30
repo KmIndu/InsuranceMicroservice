@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ProvideInfoRequest {
 
-    private String userId;
+    private Long userId;
     private String policyName;
     private int age;
     private String city;
