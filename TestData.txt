@@ -1,0 +1,66 @@
+Endpoint: localhost:8081/insurance/registerCompany
+Request Body: 
+{
+  "companyName": "ABC Insurance",
+  "gstIn": "GST12345"
+}
+
+Endpoint: localhost:8081/insurance/addPolicy
+Request Body: 
+{
+  "policyName": "Life Insurance",
+  "description": "Provides coverage for life",
+  "coverageAmount": 100000,
+  "premium": 5000
+}
+
+Endpoint: localhost:8081/insurance/applyPolicy
+Request Body: 
+{
+  "policyId": 1,
+  "userId": 101,
+  "age": 30,
+  "city": "Dehradun",
+  "medicalHistory": "No major illnesses",
+  "tobaccoUser": false,
+  "alcoholConsumer": false
+}
+
+
+Endpoint: localhost:8081/insurance/provideInfo
+Request Body: 
+{
+  "userId": 101,
+  "policyName": "Life Insurance",
+  "age": 30,
+  "city": "Bangalore",
+  "medicalHistory": "No major illnesses",
+  "tobaccoUser": false,
+  "alcoholConsumer": false
+}
+
+
+Endpoint: localhost:8081/insurance/provideInfoToBuyers
+Request Body: 
+{
+  "userId": 101,
+  "policyName": "Life Insurance",
+  "age": 30,
+  "city": "Bangalore",
+  "medicalHistory": "No major illnesses",
+  "tobaccoUser": false,
+  "alcoholConsumer": false
+}
+
+
+Endpoint: localhost:8081/insurance/provideInfoToCompanies
+Request Body: 
+{
+  "userId": 101,
+  "policyName": "Car Insurance",
+  "age": 25,
+  "city": "Dehradun",
+  "medicalHistory": "No major illnesses",
+  "tobaccoUser": false,
+  "alcoholConsumer": false
+}
