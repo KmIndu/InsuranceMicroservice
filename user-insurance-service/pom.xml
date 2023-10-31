@@ -9,10 +9,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>user-authentication-service</artifactId>
+	<artifactId>user-insurance-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>user-authentication-service</name>
-	<description>User Authentication service for Insurance Project.</description>
+	<name>user-insurance-service</name>
+	<description>User Insurance service for Insurance Project.</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>2021.0.8</spring-cloud.version>
