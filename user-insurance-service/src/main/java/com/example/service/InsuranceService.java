@@ -1,5 +1,8 @@
 package com.example.service;
 
+import java.util.List;
+
+import com.example.entities.Policy;
 import com.example.models.AddPolicyRequest;
 import com.example.models.ApplyPolicyRequest;
 import com.example.models.ProvideInfoRequest;
@@ -8,15 +11,17 @@ import com.example.models.UserInfoRequest;
 
 public interface InsuranceService {
 
-    // User Dashboard Operations
+    // User Operations
     String applyPolicy(ApplyPolicyRequest request);
     String provideInfo(UserInfoRequest request);
+    List<Policy> getAllPoliciesByPolicyId(int policyId);
 
-    // Admin Dashboard Operations
+    // Admin Operations
     String registerCompany(RegisterCompanyRequest request);
     String addPolicy(AddPolicyRequest request);
 
-    // Owner Dashboard Operations
+    // Owner Operations
     String provideInfoToBuyers(ProvideInfoRequest request);
     String provideInfoToCompanies(ProvideInfoRequest request);
+	
 }

@@ -12,6 +12,9 @@ import com.example.models.UserInfoRequest;
 import com.example.repo.CompanyRepository;
 import com.example.repo.PolicyRepository;
 import com.example.repo.UserRepository;
+import com.example.entities.Policy;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,7 +68,11 @@ public class InsuranceServiceImpl implements InsuranceService {
 
         return insuranceDao.provideInfo(request);
     }
-
+    
+    @Override
+    public List<Policy> getAllPoliciesByPolicyId(int policyId) {
+        return insuranceDao.getAllPoliciesByPolicyId(policyId);
+    }
     // Admin Operations
 
     @Override

@@ -8,11 +8,15 @@ import com.example.models.UserInfoRequest;
 import com.example.repo.PolicyRepository;
 import com.example.entities.Policy;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class InsuranceDaoImpl implements InsuranceDao {
-
+	@Autowired
+    private PolicyRepository policyRepository;
     // User Operations
 
     @Override
@@ -24,7 +28,15 @@ public class InsuranceDaoImpl implements InsuranceDao {
     public String provideInfo(UserInfoRequest request) {
         return "Information provided for user ";
     }
+//    @Override
+//    public List<String> getAddOnFeatures(int policyId) {
+//        // Implementation for getting add-on features
+//    }
 
+    @Override
+    public List<Policy> getAllPoliciesByPolicyId(int policyId) {
+        return policyRepository.findGetAllPoliciesByPolicyId(policyId);
+    }
     // Admin Operations
 
     @Override

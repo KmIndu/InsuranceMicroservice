@@ -1,5 +1,8 @@
 package com.example.entities;
 
+import java.util.List;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -24,4 +27,5 @@ public class Policy {
     private String description;
     private double coverageAmount;
     private int premium;
+    
 }
