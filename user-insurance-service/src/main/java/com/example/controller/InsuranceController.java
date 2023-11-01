@@ -30,9 +30,9 @@ public class InsuranceController {
         return insuranceService.provideInfo(request);
     }
     
-    @GetMapping("/getAllPoliciesByPolicyId/{policyId}")
-    public List<Policy> getAllPoliciesByPolicyId(@PathVariable int policyId) {
-        return insuranceService.getAllPoliciesByPolicyId(policyId);
+    @GetMapping("/getAllPolicies")
+    public List<Policy> getAllPoliciesByPolicyId() {
+        return insuranceService.getAllPolicies();
     }
 
     @PostMapping("/registerCompany")
@@ -43,6 +43,11 @@ public class InsuranceController {
     @PostMapping("/addPolicy")
     public String addPolicy(@RequestBody AddPolicyRequest request) {
         return insuranceService.addPolicy(request);
+    }
+    
+    @PutMapping("/updatePolicy/{policyId}")
+    public String updatePolicy(@PathVariable int policyId, @RequestBody AddPolicyRequest request) {
+        return insuranceService.updatePolicy(policyId, request);
     }
 
     @PostMapping("/provideInfoToBuyers")

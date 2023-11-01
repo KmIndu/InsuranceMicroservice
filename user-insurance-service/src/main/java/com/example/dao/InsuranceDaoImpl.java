@@ -9,6 +9,7 @@ import com.example.repo.PolicyRepository;
 import com.example.entities.Policy;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -34,8 +35,8 @@ public class InsuranceDaoImpl implements InsuranceDao {
 //    }
 
     @Override
-    public List<Policy> getAllPoliciesByPolicyId(int policyId) {
-        return policyRepository.findGetAllPoliciesByPolicyId(policyId);
+    public List<Policy> getAllPolicies() {
+        return policyRepository.findAll();
     }
     // Admin Operations
 
@@ -48,6 +49,28 @@ public class InsuranceDaoImpl implements InsuranceDao {
     public String addPolicy(AddPolicyRequest request) {
         return "Policy added: ";
     }
+    @Override
+    public String updatePolicy(int policyId, AddPolicyRequest request) {
+    	 Optional<Policy> optionalPolicy = policyRepository.findUpdatePolicyByPolicyId((int) policyId);
+
+    	    if (optionalPolicy.isPresent()) {
+    	        Policy existingPolicy = optionalPolicy.get();
+
+    	        // Update policy fields
+    	        existingPolicy.setPolicyName(request.getPolicyName());
+    	        existingPolicy.setDescription(request.getDescription());
+    	        existingPolicy.setCoverageAmount(request.getCoverageAmount());
+    	        existingPolicy.setPremium(request.getPremium());
+
+    	        // Save the updated policy
+    	        policyRepository.save(existingPolicy);
+
+    	        return "Policy updated with ID: " + policyId;
+    	    } else {
+    	        return "Policy with ID " + policyId + " not found.";
+    	    }
+    }
+
 
     // Owner Operations
 

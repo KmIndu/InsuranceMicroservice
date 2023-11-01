@@ -16,11 +16,12 @@ public interface InsuranceDao {
     String applyPolicy(ApplyPolicyRequest request);
     String provideInfo(UserInfoRequest request);
 //    List<String> getAddOnFeatures(int policyId);
-    List<Policy> getAllPoliciesByPolicyId(int policyId);
+    List<Policy> getAllPolicies();
 
     // Admin Operations
     String registerCompany(RegisterCompanyRequest request);
     String addPolicy(AddPolicyRequest request);
+    String updatePolicy(int policyId, AddPolicyRequest request);
 
     // Owner Operations
     String provideInfoToBuyers(ProvideInfoRequest request);

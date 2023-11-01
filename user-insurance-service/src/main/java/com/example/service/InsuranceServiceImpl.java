@@ -70,8 +70,8 @@ public class InsuranceServiceImpl implements InsuranceService {
     }
     
     @Override
-    public List<Policy> getAllPoliciesByPolicyId(int policyId) {
-        return insuranceDao.getAllPoliciesByPolicyId(policyId);
+    public List<Policy> getAllPolicies() {
+        return insuranceDao.getAllPolicies();
     }
     // Admin Operations
 
@@ -97,6 +97,10 @@ public class InsuranceServiceImpl implements InsuranceService {
 
         policyRepository.save(policy);
         return insuranceDao.addPolicy(request);
+    }
+    @Override
+    public String updatePolicy(int policyId, AddPolicyRequest request) {
+        return insuranceDao.updatePolicy(policyId, request);
     }
 
     // Owner Operations

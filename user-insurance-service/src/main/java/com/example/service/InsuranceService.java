@@ -14,11 +14,12 @@ public interface InsuranceService {
     // User Operations
     String applyPolicy(ApplyPolicyRequest request);
     String provideInfo(UserInfoRequest request);
-    List<Policy> getAllPoliciesByPolicyId(int policyId);
+    List<Policy> getAllPolicies();
 
     // Admin Operations
     String registerCompany(RegisterCompanyRequest request);
     String addPolicy(AddPolicyRequest request);
+    String updatePolicy(int policyId, AddPolicyRequest request);
 
     // Owner Operations
     String provideInfoToBuyers(ProvideInfoRequest request);
